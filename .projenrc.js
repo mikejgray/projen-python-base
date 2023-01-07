@@ -6,9 +6,10 @@ const project = new cdk.JsiiProject({
   name: 'projen-python-base',
   repositoryUrl: 'https://github.com/mike/projen-python-base.git',
 
-  // deps: [],                /* Runtime dependencies of this module. */
-  // description: undefined,  /* The description is just a string that helps people understand the purpose of the package. */
-  // devDeps: [],             /* Build dependencies for this module. */
-  // packageName: undefined,  /* The "name" in package.json. */
+  deps: ['projen'],
+  description: 'A bit more refined basic Python project',
+  jestOptions: { updateSnapshot: false },
+  githubOptions: { mergify: true },
 });
+
 project.synth();
