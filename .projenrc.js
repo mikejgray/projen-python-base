@@ -4,9 +4,10 @@ const project = new cdk.JsiiProject({
   authorAddress: 'mike@graywind.org',
   defaultReleaseBranch: 'main',
   name: 'projen-python-base',
-  repositoryUrl: 'https://github.com/mike/projen-python-base.git',
+  repositoryUrl: 'https://github.com/mikejgray/projen-python-base.git',
 
-  deps: ['projen'],
+  peerDeps: ['projen'],
+  devDeps: ['projen'],
   description: 'A bit more refined basic Python project',
   jestOptions: { updateSnapshot: false },
   githubOptions: { mergify: true },

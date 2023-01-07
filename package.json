@@ -3,7 +3,7 @@
   "description": "A bit more refined basic Python project",
   "repository": {
     "type": "git",
-    "url": "https://github.com/mike/projen-python-base.git"
+    "url": "https://github.com/mikejgray/projen-python-base.git"
   },
   "scripts": {
     "build": "npx projen build",
@@ -57,7 +57,7 @@
     "ts-jest": "^27",
     "typescript": "^4.9.4"
   },
-  "dependencies": {
+  "peerDependencies": {
     "projen": "^0.66.7"
   },
   "main": "lib/index.js",
