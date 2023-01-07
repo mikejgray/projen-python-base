@@ -1,5 +1,5 @@
 {
-  "name": "projen-python-base",
+  "name": "@mikejgray/projen-python-base",
   "description": "A bit more refined basic Python project",
   "repository": {
     "type": "git",
@@ -52,7 +52,7 @@
     "jsii-pacmak": "^1.73.0",
     "json-schema": "^0.4.0",
     "npm-check-updates": "^16",
-    "projen": "^0.66.7",
+    "projen": "0.66.7",
     "standard-version": "^9",
     "ts-jest": "^27",
     "typescript": "^4.9.4"
@@ -62,6 +62,9 @@
   },
   "main": "lib/index.js",
   "license": "Apache-2.0",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  },
   "version": "0.0.0",
   "jest": {
     "testMatch": [
@@ -113,6 +116,7 @@
       "rootDir": "src"
     }
   },
+  "public": true,
   "resolutions": {
     "@types/prettier": "2.6.0",
     "@types/babel__traverse": "7.18.2"

@@ -8,6 +8,7 @@ Object {
 /.github/workflows/ci.yml linguist-generated
 /.github/workflows/pull-request-lint.yml linguist-generated
 /.gitignore linguist-generated
+/.pre-commit-config.yaml linguist-generated
 /.projen/** linguist-generated
 /.projen/deps.json linguist-generated
 /.projen/files.json linguist-generated
@@ -157,6 +158,7 @@ dmypy.json
 
 cython_debug/
 .DS_Store
+!/.pre-commit-config.yaml
 !/.github/workflows/ci.yml
 ",
   ".pre-commit-config.yaml": "# See https://pre-commit.com for more information
@@ -236,6 +238,7 @@ repos:
       ".github/workflows/ci.yml",
       ".github/workflows/pull-request-lint.yml",
       ".gitignore",
+      ".pre-commit-config.yaml",
       ".projen/deps.json",
       ".projen/files.json",
       ".projen/tasks.json",

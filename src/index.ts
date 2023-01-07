@@ -1,5 +1,6 @@
+import { readFileSync } from 'fs';
 import { join } from 'path';
-import { SampleFile } from 'projen';
+import { TextFile } from 'projen';
 import { GitHub, GithubWorkflow } from 'projen/lib/github';
 import { JobPermission, JobStep } from 'projen/lib/github/workflows-model';
 import { PythonProject, PythonProjectOptions } from 'projen/lib/python';
@@ -57,7 +58,10 @@ export class PoetryPythonProject extends PythonProject {
     });
 
     this.gitignore.addPatterns('.DS_Store');
-    new SampleFile(this, '.pre-commit-config.yaml', { sourcePath: join(__dirname, 'files', '.pre-commit-config.yaml') });
+    const precommit = new TextFile(this, '.pre-commit-config.yaml', {
+      lines: readFileSync(join(__dirname, 'pre-commit-config.yaml')).toString().split('\n'),
+    });
+    precommit.synthesize();
     new PythonPrecommitCI(this.github!);
 
   };
