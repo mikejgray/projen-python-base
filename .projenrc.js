@@ -1,4 +1,5 @@
 const { cdk } = require('projen');
+
 const project = new cdk.JsiiProject({
   author: 'Mike Gray',
   authorAddress: 'mike@graywind.org',
@@ -13,14 +14,14 @@ const project = new cdk.JsiiProject({
   description: 'A bit more refined basic Python project',
   jestOptions: { updateSnapshot: false },
   githubOptions: { mergify: true },
+  workflowNodeVersion: '16',
 });
+project.compileTask.exec('cp src/pre-commit-config.yaml lib/pre-commit-config.yaml');
 
 project.addFields({
   main: 'lib/index.js',
   types: 'lib/index.d.ts',
   public: true,
 });
-
-project.compileTask.exec('cp src/pre-commit-config.yaml lib/pre-commit-config.yaml');
 
 project.synth();
