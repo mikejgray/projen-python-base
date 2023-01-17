@@ -10,3 +10,9 @@ h o P P P f P
 - Poetry management
 - .pre-commit-config.yaml file with sane GitHub Actions CI checks
 - .gitignore that excludes `.DS_Store` (you're welcome, Mac users)
+
+## How to install
+
+```sh
+projen new poetry_python --from https://github.com/mikejgray/projen-python-base
+```
