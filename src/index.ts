@@ -58,10 +58,10 @@ export class PoetryPythonProject extends PythonProject {
     });
 
     this.gitignore.addPatterns('.DS_Store');
-    const precommit = new TextFile(this, '.pre-commit-config.yaml', {
+    new TextFile(this, '.pre-commit-config.yaml', {
       lines: readFileSync(join(__dirname, 'pre-commit-config.yaml')).toString().split('\n'),
     });
-    precommit.synthesize();
+
     new PythonPrecommitCI(this.github!);
 
   };
