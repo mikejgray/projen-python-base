@@ -31,6 +31,7 @@ project.compileTask.exec(
 
 const upgradeMain = project.tryFindObjectFile('.github/workflows/upgrade-main.yml');
 upgradeMain.addOverride('jobs.pr.steps.4.with.token', '${{ secrets.GITHUB_TOKEN }}');
+upgradeMain.addOverride('jobs.pr.permissions.pull-requests', 'write');
 
 project.addFields({
   main: 'lib/index.js',
