@@ -25,7 +25,7 @@ const project = new cdk.JsiiProject({
     },
   },
   autoApproveUpgrades: true,
-  autoApproveOptions: { allowedUsernames: ['github-actions'] },
+  autoApproveOptions: { allowedUsernames: ['github-bot'] },
 });
 project.compileTask.exec(
   'cp src/pre-commit-config.yaml lib/pre-commit-config.yaml',
