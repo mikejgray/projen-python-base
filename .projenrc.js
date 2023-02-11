@@ -24,6 +24,8 @@ const project = new cdk.JsiiProject({
         GithubCredentials.fromPersonalAccessToken('GITHUB_TOKEN'),
     },
   },
+  autoApproveUpgrades: true,
+  autoApproveOptions: { allowedUsernames: ['github-actions'] },
 });
 project.compileTask.exec(
   'cp src/pre-commit-config.yaml lib/pre-commit-config.yaml',
